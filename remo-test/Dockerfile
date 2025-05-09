@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu
 ENV PATH="/root/miniconda3/bin:${PATH}"
 ARG PATH="/root/miniconda3/bin:${PATH}"
 
