@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
-ENV PATH="/root/miniconda3/bin:${PATH}"
-ARG PATH="/root/miniconda3/bin:${PATH}"
+ENV PATH="/root/miniforge3/bin:${PATH}"
+ARG PATH="/root/miniforge3/bin:${PATH}"
 
 LABEL maintainer="lars.buntemeyer@hereon.de"
 
@@ -20,8 +20,6 @@ RUN wget \
     && mkdir /root/.conda \
     && bash Miniforge3-Linux-x86_64.sh -b \
     && rm -f Miniforge3-Linux-x86_64.sh
-RUN export PATH="~/miniforge3/bin/:$PATH"
-RUN conda init
 RUN conda --version
 RUN conda config --add channels conda-forge
 RUN conda config --set channel_priority strict
