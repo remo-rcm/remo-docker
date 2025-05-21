@@ -20,6 +20,7 @@ RUN wget \
     && mkdir /root/.conda \
     && bash Miniforge3-Linux-x86_64.sh -b \
     && rm -f Miniforge3-Linux-x86_64.sh
+RUN ~/miniforge3/bin/conda init
 RUN conda --version
 RUN conda config --add channels conda-forge
 RUN conda config --set channel_priority strict
